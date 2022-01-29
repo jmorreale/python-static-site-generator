@@ -11,7 +11,7 @@ def main(source="content", dest="dist"):
     }
 
     # Unpack dictionary with **
-    Site(**config)
+    Site(**config).build()
 
 
 typer.run(main)

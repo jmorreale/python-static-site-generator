@@ -10,9 +10,8 @@ def main(source="content", dest="dist"):
         "dest": dest
     }
 
-    # create instance of Site class
-    site = Site(config.source, config.dest)
-    site.build()
+    # Unpack dictionary with **
+    Site(**config)
 
 
 typer.run(main)

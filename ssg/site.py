@@ -19,5 +19,5 @@ def build(self):
 
         # test if the current path is a dir
         if path.is_dir():
-            create_dir(path)
+            self.create_dir(path)
 

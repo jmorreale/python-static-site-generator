@@ -13,3 +13,6 @@ def main(source="content", dest="dist"):
     # create instance of Site class
     site = Site(config.source, config.dest)
     site.build()
+
+
+typer.run(main)

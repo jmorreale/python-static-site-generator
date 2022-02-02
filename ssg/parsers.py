@@ -1,6 +1,6 @@
 from typing import List
 from pathlib import Path
-from shutil import copy2
+import shutil
 
 
 class Parser:
@@ -22,7 +22,7 @@ class Parser:
             file.write(content)
 
     def copy(self, path, source, dest):
-        copy2(path, self.dest / path.relative_to(self.source))
+        shutil.copy2(path, self.dest / path.relative_to(self.source))
 
 
 class ResourceParser(Parser):

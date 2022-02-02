@@ -1,4 +1,5 @@
 from pathlib import Path
+import parsers
 
 
 class Site:
@@ -16,3 +17,9 @@ class Site:
         for path in self.source.rglob("*"):
             if path.is_dir():
                 self.create_dir(path)
+
+    def load_parser(self, extension):
+        for self.parser in self.parsers:
+            if extension.valid_extension():
+                return self.parser
+            

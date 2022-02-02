@@ -19,9 +19,15 @@ class Site:
 
     def run_parser(self, path: Path):
         parser = self.load_parser(path.suffix)
+        if parser is not None:
+            parser.parse(self.source, self.dest)
+        else:
+            print("Not implemented")
 
     def build(self):
         self.dest.mkdir(parents=True, exist_ok=True)
         for path in self.source.rglob("*"):
             if path.is_dir():
                 self.create_dir(path)
+            elif path.is_file():
+                self.run_parser(path)
